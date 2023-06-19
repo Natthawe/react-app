@@ -1,0 +1,16 @@
+sudo snap install node --classic
+node --version
+npm --version
+
+https://github.com/nvm-sh/nvm
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+nvm ls	
+nvm list-remote
+nvm use system
+
+npx create-react-app my-app
+cd my-app
+npm start
+npm install react-bootstrap
+npm install react-router-dom@latest
