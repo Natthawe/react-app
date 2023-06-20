@@ -14,4 +14,4 @@ cd my-app
 npm start
 npm install react-bootstrap
 npm install react-router-dom@latest
-npm install roslib
+npm install --save-dev @babel/standalone
