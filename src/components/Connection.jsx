@@ -52,10 +52,10 @@ export default class Connection extends Component {
 
     if (connectionStatus === "connected") {
       alertVariant = "success";
-      alertMessage = "Robot Connected";
+      alertMessage = "Robot Connected!";
     } else if (connectionStatus === "error" || connectionStatus === "closed") {
       alertVariant = "danger";
-      alertMessage = connectionStatus === "error" ? "Error" : "Connection Closed";
+      alertMessage = connectionStatus === "error" ? "Error" : "Robot Disconnected!";
     } else {
       alertVariant = "secondary";
       alertMessage = "Connecting...";
