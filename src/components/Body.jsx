@@ -10,7 +10,7 @@ export default class Body extends Component {
         <Container>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
+                    <Route path="/Home" element={<Home />}></Route>
                     <Route path="/About" element={<About />}></Route>
                 </Routes>
             </Router>
