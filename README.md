@@ -70,6 +70,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
 
 
+### RUNNING
+    npm start
+
 ### Helper
     https://bootswatch.com/
     https://react-bootstrap.github.io/docs/components/navbar

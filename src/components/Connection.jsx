@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Alert } from "react-bootstrap";
 import ROSLIB from "roslib";
+import Config from "../scripts/config.js";
 
 export default class Connection extends Component {
   constructor(props) {
@@ -39,9 +40,26 @@ export default class Connection extends Component {
         connectionStatus: "closed",
         error: null,
       });
+
+      //try to reconnect every 3 seconds
+      setTimeout(() => {
+        ros.connect(
+          "ws://" +
+            Config.ROSBRIDGE_SERVER_IP +
+            ":" +
+            Config.ROSBRIDGE_SERVER_PORT +
+            ""
+        );
+      }, Config.RECONNECTION_TIMER);
     });
 
-    ros.connect("ws://localhost:9090");
+    ros.connect(
+      "ws://" +
+        Config.ROSBRIDGE_SERVER_IP +
+        ":" +
+        Config.ROSBRIDGE_SERVER_PORT +
+        ""
+    );
   }
 
   render() {
@@ -55,7 +73,8 @@ export default class Connection extends Component {
       alertMessage = "Robot Connected!";
     } else if (connectionStatus === "error" || connectionStatus === "closed") {
       alertVariant = "danger";
-      alertMessage = connectionStatus === "error" ? "Error" : "Robot Disconnected!";
+      alertMessage =
+        connectionStatus === "error" ? "Error" : "Robot Disconnected!";
     } else {
       alertVariant = "secondary";
       alertMessage = "Connecting...";
